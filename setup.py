@@ -1,3 +1,4 @@
+import pip
 try:
     from setuptools import setup, find_packages
 except ImportError:
