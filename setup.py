@@ -33,6 +33,7 @@ setup(
     install_requires=[str(requirement.requirement) for requirement in requirements],
     packages=find_packages(),
     include_package_data=True,
+    package_data={'': ['static/*.json']},
     author="Abhilash Janardhanan",
     author_email="jabhilash7@gmail.com"
 )
