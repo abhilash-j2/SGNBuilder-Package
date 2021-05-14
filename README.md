@@ -10,3 +10,8 @@ This package contains functions to ease the conversion of the social distance me
 4. Obtain networks as comparison (ratios or percent change) over comparable period in last year (comparable week)
 5. Add additional node level features - latitude, longitude , census information 
 
+## Installation
+
+```
+pip install git+https://github.com/abhilash-j2/SGNBuilder-Package
+```
