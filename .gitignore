@@ -5,3 +5,5 @@ venv/
 *.ipynb
 
 __pycache__/
+
+*.egg-info/
