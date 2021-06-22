@@ -7,10 +7,11 @@ import sys
 import pandas as pd
 from pathlib import Path
 import datetime
+import calendar
 import json
 from collections import defaultdict
 from tqdm import tqdm
-import pkgutil
+# import pkgutil
 from SGNBuilder import constants
 
 
@@ -322,6 +323,12 @@ def read_file(filepath, columns_required=None, filter_dict = None, convert_to_da
             mask = subset_for_state_county(dat, state_counties_req)
         elif "state_county_tract" in filter_dict.keys():
             raise NotImplementedError()
+        elif "fips" in filter_dict.keys():
+            fips = filter_dict["fips"]
+            if type(fips) == type(list()):
+                mask = dat["origin_census_block_group"].apply(lambda x: x in fips)
+            else:
+                raise ValueError
         return dat.loc[mask,:]
 
 def agg_over_time(df, agg_method="sum", date_col="date_range_start", period = "week"):
