@@ -60,8 +60,8 @@ class NetworkBuilder:
 
 
     def create_edge_data_for_dates(self, start_date, end_date, columns_required=None, filter_dict = None, agg_period = "week"):
-        if agg_period not in ["week","month"]:
-            raise ValueError("period should be either week or month")
+        if agg_period not in ["day","week","month"]:
+            raise ValueError("period should be either day, week or month")
 
         analysis_filepaths = self.construct_filepaths_from_dates(start_date, end_date)
         results = []
