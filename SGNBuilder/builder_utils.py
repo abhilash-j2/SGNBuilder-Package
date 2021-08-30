@@ -319,7 +319,7 @@ def read_file(filepath, columns_required=None, filter_dict = None, convert_to_da
             mask = subset_for_state(dat, states_req)
             
         elif "state_county" in filter_dict.keys():
-            state_counties_req = filter_dict["state_counties"]
+            state_counties_req = filter_dict["state_county"]
             mask = subset_for_state_county(dat, state_counties_req)
         elif "state_county_tract" in filter_dict.keys():
             raise NotImplementedError()
@@ -335,7 +335,7 @@ def agg_over_time(df, agg_method="sum", date_col="date_range_start", period = "w
     # Columns expected = ["origin","destination", date_col, "travels"]
     if period == "day":
         print("No aggregation is performed as data is at a day level")
-        df["day"] = date_col
+        df["day"] = df[date_col]
         return df
     dat=df.copy()
     date_group_col = date_col
