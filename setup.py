@@ -28,7 +28,7 @@ except:
 
 setup(
     name="SGNBuilder",
-    version="0.1.1",
+    version="0.1.2",
     url='https://github.com/abhilash-j2/SGNBuilder-Package',
     install_requires=[str(requirement.requirement) for requirement in requirements],
     packages=find_packages(),
